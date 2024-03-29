@@ -1,6 +1,6 @@
-
 # singleton_logger.py
 import logging
+
 
 class SingletonLogger:
     _instance = None
@@ -16,7 +16,7 @@ class SingletonLogger:
         logger = logging.getLogger(__name__)
         logger.setLevel(logging.DEBUG)
 
-        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(filename)s | Line %(lineno)d | %(message)s')
 
         file_handler = logging.FileHandler('app.log')
         file_handler.setFormatter(formatter)
